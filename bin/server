@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bin=`dirname "$0"`
+bin=`cd "$bin">/dev/null; pwd`
+source $bin/chatroom-env.sh
+
+java $WX_JAVA_OPTS $WX_JAVA_OPTS_EXTRA com.yoryor.cli.server.ChatServer "$@"

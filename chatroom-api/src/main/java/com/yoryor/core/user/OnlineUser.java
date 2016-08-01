@@ -42,6 +42,8 @@ public class OnlineUser {
   }
 
   public void logOut() throws Exception{
+    reader.close();
+    writer.close();
     socket.close();
   }
 

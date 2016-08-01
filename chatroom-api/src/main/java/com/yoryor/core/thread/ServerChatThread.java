@@ -26,6 +26,7 @@ public class ServerChatThread implements Runnable{
           continue;
         } else if (msg.equals("/exit")) {
           user.logOut();
+          context.removeUser(user);
           break;
         }
         context.addMessage(msg, user.getUserName());

@@ -1,13 +1,17 @@
 package com.yoryor.core.msg;
 
 
+import java.util.Date;
+
 public class Message {
   private final String msg;
   private final String producer;
+  private final Date time;
 
   public Message(String msg, String producer) {
     this.msg = msg;
     this.producer = producer;
+    time = new Date();
   }
 
   public String getMsg() {
@@ -27,6 +31,6 @@ public class Message {
   }
 
   public String formatString() {
-    return String.format("%s:%s", producer, msg);
+    return String.format("%s:%s:%s", producer, msg, time);
   }
 }
